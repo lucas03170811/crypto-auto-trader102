@@ -95,7 +95,7 @@ def manage_trailing_and_pyramid(ex: Exchange, symbol: str, side: str, df, pos_st
         pos_state["trail"] = new_trail
 
     price = last["close"]
-    if should_pyramid(side, price, last_add_price, atr_val, step_atr=1.0, max_adds=2, adds_done=adds_done):
+    if should_pyramid(side, price, last_add_price, atr_val, step_atr=1.0, max_adds=4, adds_done=adds_done):
         add_qty = pos_state.get("qty", 0) * 0.5
         if add_qty > 0:
             if DRY_RUN:
